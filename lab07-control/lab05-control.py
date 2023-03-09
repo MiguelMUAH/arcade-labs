@@ -33,14 +33,14 @@ class Personaje:
     def update(self):
         self.position_y += self.change_y
         self.position_x += self.change_x
-        if self.position_x < self.radius:
-            self.position_x = self.radius
+        if self.position_x < self.radius+20:
+            self.position_x = self.radius+20
 
         if self.position_x > SCREEN_WIDTH - self.radius:
             self.position_x = SCREEN_WIDTH - self.radius
 
-        if self.position_y < self.radius:
-            self.position_y = self.radius
+        if self.position_y < self.radius+190:
+            self.position_y = self.radius+190
 
         if self.position_y > SCREEN_HEIGHT - self.radius:
             self.position_y = SCREEN_HEIGHT - self.radius
