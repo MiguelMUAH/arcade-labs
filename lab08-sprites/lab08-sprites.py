@@ -12,7 +12,7 @@ SCREEN_HEIGHT = 700
 class MyGame(arcade.Window):
 
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Sprite Example")
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Si")
         self.player_list = None
         self.coin_list = None
 
@@ -32,20 +32,20 @@ class MyGame(arcade.Window):
 
         # Score
         self.score = 0
-
-        # Set up the player
-        # Character image from kenney.nl
-        self.player_sprite = arcade.Sprite("", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite("Agencia_Tributaria.svg.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.player_list.append(self.player_sprite)
 
     def on_draw(self):
         arcade.start_render()
+        self.coin_list.draw()
+        self.player_list.draw()
 
 
 def main():
     window = MyGame()
+    window.setup()
     arcade.run()
 
 
